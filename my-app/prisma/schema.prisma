@@ -6,7 +6,12 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
+  output   = "../lib/generated/prisma2"
+
+  // Enables the use of database driver adapters for better performance in serverless environments
+  // its already enabled by default in Prisma 5+
+  // so its deprecated to add it here
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {

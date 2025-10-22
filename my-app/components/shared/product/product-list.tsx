@@ -1,3 +1,4 @@
+import { Product } from '@/types';
 import ProductCard from './product-card';
 
 const ProductList = ({
@@ -5,8 +6,7 @@ const ProductList = ({
   title,
   limit,
 }: {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any;
+  data: Product[];
   title?: string;
   limit?: number;
 }) => {
@@ -24,8 +24,7 @@ const ProductList = ({
             gap-3
              '
         >
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {limitedData.map((product: any) => (
+          {limitedData.map((product: Product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
         </div>

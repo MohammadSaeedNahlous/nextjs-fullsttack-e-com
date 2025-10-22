@@ -3,7 +3,7 @@ import { Product } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductPrice from './product-price';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card className='p-4 w-full max-w-sm'>
