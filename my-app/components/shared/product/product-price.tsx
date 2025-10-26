@@ -4,23 +4,19 @@ const ProductPrice = ({
   value,
   className,
 }: {
-  value: number | string;
+  value: number;
   className?: string;
 }) => {
-  // Convert value to number if it's a string
-  const numValue = typeof value === 'string' ? parseFloat(value) : value;
-  // Fallback to 0 if NaN
-  const safeValue = isNaN(numValue) ? 0 : numValue;
-  // Ensure 2 decimal places
-  const formattedPrice = safeValue.toFixed(2);
-  // get Int/float parts
-  const [intPart, floatPart] = formattedPrice.split('.');
+  // Ensure two decimal places
+  const stringValue = value.toFixed(2);
+  // Get the int/float
+  const [intValue, floatValue] = stringValue.split('.');
 
   return (
     <p className={cn('text-2xl', className)}>
       <span className='text-xs align-super'>$</span>
-      {intPart}
-      <span className='text-xs align-super'>.{floatPart}</span>
+      {intValue}
+      <span className='text-xs align-super'>.{floatValue}</span>
     </p>
   );
 };
